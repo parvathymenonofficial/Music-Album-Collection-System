@@ -1,0 +1,66 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Album</title>
+
+    <link rel="stylesheet"
+    href="{% static 'albums/style.css' %}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Add New Album</h1>
+
+        <form method="POST"
+              onsubmit="return validateAlbumForm()">
+
+            {% csrf_token %}
+
+            <input type="text"
+                   id="album_name"
+                   name="album_name"
+                   placeholder="Album Name">
+
+            <br><br>
+
+            <input type="text"
+                   id="artist"
+                   name="artist"
+                   placeholder="Artist">
+
+            <br><br>
+
+            <input type="text"
+                   id="genre"
+                   name="genre"
+                   placeholder="Genre">
+
+            <br><br>
+
+            <input type="text"
+                   id="year"
+                   name="year"
+                   placeholder="Year">
+
+            <br><br>
+
+            <button type="submit" class="btn">
+                Save Album
+            </button>
+
+        </form>
+
+        <br>
+
+        <a href="/" class="btn">Home</a>
+
+    </div>
+
+    <script src="{% static 'albums/script.js' %}"></script>
+
+</body>
+</html>
